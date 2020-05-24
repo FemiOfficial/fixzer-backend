@@ -4,11 +4,11 @@ import cors from 'cors';
 import morgan from 'morgan';
 import CookieParser from 'cookie-parser';
 import http from 'http';
-import 'dotenv/config.js';
+import 'dotenv/config';
 import routes from './routes';
 import socketSever from './socket';
-import adminSocketSever from './socket/admin.js';
-import Logger from './helpers/Logger.js';
+import adminSocketSever from './socket/admin';
+import Logger from './helpers/Logger';
 
 const PORT = process.env.NODE_ENV === 'test' ? 3011 : process.env.PORT || 5000;
 
@@ -26,7 +26,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 app.use(express.static('public'));
-app.use(express.static('files'))
+app.use(express.static('files'));
 routes(app);
 
 

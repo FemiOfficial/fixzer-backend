@@ -11,10 +11,9 @@
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "clean": "rm -rf build && mkdir build",
     "build": "npm run clean && babel ./src -d build --copy-files",
-    "start": "node ./build/app.js",
+    "start": "cd -rf ./build/* ../app && node ./build/app.js",
     "start:dev": "./node_modules/.bin/babel-watch app.js",
     "pm2:restart": "./pm2.sh"
-    
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
